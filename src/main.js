@@ -1,6 +1,7 @@
 import { diffDates, diffToHtml } from "./datecalc.js";
 import { formatError } from "./utils.js";
 import { timerCalculate } from "./timer.js";
+import adudio from "./audio/ding.mp3"
 
 // Калькулятор дат html
 const dateCalcForm = document.getElementById("datecalc"); 
@@ -48,6 +49,7 @@ function startTimer(e){
             if (timerValue.value==="00:00:00"){
                 clearInterval(id)
                 let audio = document.getElementById("player")
+                audio.src = adudio
                 audio.play()
             }
         },1000)}
